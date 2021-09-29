@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Reimbursements R Us</title>
+<link rel="stylesheet" href = "Reimbursements.css">
+<meta name="viewport" content = "width = device-width, initial-scale=1.0">
+<!--[if 1t IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+        <script src="https://kit.fontawesome.com/1369e0e729.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            /* ========= Reserved Elements (General) ========== */
+            *
+            {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                list-style: none;
+                text-decoration: none;
+                outline: none;
+                font-family: 'Open Sans', sans-serif;
+                margin-bottom:25px;
+            }
+    
+            header
+            {
+                background-color: #292b2f;
+                height: 150px;
+                /*background-image: url(../artarchivelogo.jpeg);*/
+                background-repeat: no-repeat;
+                /*position: relative;*/
+            }
+    
+            nav a:link
+            {
+                color:#d7d5d9;
+            }
+            nav a:visited
+            {
+                color:#40af93;
+            }
+            nav a:hover
+            {
+                color:#018185;
+            }
+    
+            h1
+            {
+                padding-top: 45px;
+                padding-left: 100px;
+                font-size: 2.5em;
+                color: #d7d5d9;
+                text-align: center;
+            }
+            h1.content
+            {
+                color: #292b2f;
+            }
+    
+            h2.content
+            {
+                margin-left: 10em;
+                padding: 2em;
+            }
+    
+            body
+            {
+                font-family: Arial;
+                margin: 0;
+                background-color: #3bbfc3;
+                background: #a5b5c5;
+                background: lightblue !important;
+            }
+    
+            form
+            {
+                padding: 2em;
+                margin-left: 10em;
+            }
+    
+            .modal-body form
+            {
+                padding: 0em;
+                margin-left: 0em;
+            }
+    
+            label
+            {
+                float: left;
+                display: block;
+                text-align: center;
+                width: 20em;
+                padding-right: 2em;
+            }
+    
+            button
+            {
+                margin-bottom: 25px;
+            }
+    
+            input,textarea
+            {
+                display: block;
+                width: 100%; /* Full width */
+                padding: 12px; /* Some padding */
+                border: 1px solid #ccc;
+                border-radius: 3px; /* Rounded borders */
+                box-sizing: border-box; /* Make sure that padding and width stays in place */
+                margin-top: 4px; /* Add a top margin */
+                margin-bottom: 14px; /* Bottom margin */
+                resize: vertical;
+            }
+    
+            img
+            {
+                width: 100%;
+                height: 100%;
+                opacity: 1;
+                display: block;
+                /*transition: filter 0.5;*/
+                backface-visibility: hidden;
+                -webkit-filter: blur(0px); /* Safari 6.0 - 9.0 */
+                filter: blur(0px);
+            }
+            img:hover
+            {
+                opacity: 0.7;
+            }
+    
+            iframe
+            {
+                width: 100%;
+                height: 100%;
+                opacity: 1;
+                display: block;
+                /*transition: filter 0.5;*/
+                backface-visibility: hidden;
+                -webkit-filter: blur(0px); /* Safari 6.0 - 9.0 */
+                filter: blur(0px);
+            }
+            iframe:hover
+            {
+                opacity: 0.7;
+            }
+    
+            footer
+            {
+                background-color: #292b2f;
+                color: #d7d5d9;
+                padding: 15px;
+            }
+    
+            /* ========== Custom Classes and IDs ========== */
+    
+    
+            .box
+            {
+                background: #40af93;
+                border-radius: 4px;
+                transition: transform .2s;
+            }
+            .box:hover
+            {
+                -ms-transform: scale(1.2);
+                -webkit-transform: scale(1.2);
+                transform: scale(1.2);
+            }
+    
+            .col-lg-2, .col-md-3, .col-xs-6
+            {
+                margin-top: 30px !important;
+                margin-bottom: 100px;
+            }
+    
+            table {border: 3px solid lightblue;}
+    
+            .content
+            {
+                padding: 20px;
+            }
+    
+            .row.content
+            {
+                height: auto;
+                margin-bottom: 500px;
+            }
+    
+            .sidenav
+            {
+                padding-top: 20px;
+                background-color: #292b2f;
+                color: #d7d5d9;
+                height: 100%;
+            }
+    
+            .navbar-nav {
+                float:none;
+                margin:0 auto;
+                display: block;
+                text-align: center;
+                width: 100%;
+            }
+    
+            .navbar-nav > li {
+                display: inline-block;
+                float:none;
+            }
+    
+            .wrapper{
+                max-width: 310px;
+                width: 100%;
+                height: auto;
+                margin: 40px auto;
+            }
+    
+            .wrapper .logo img{
+                display: block;
+                width: 48px;
+                height: 48px;
+                margin: 0 auto 25px;
+            }
+    
+            .wrapper .title p{
+                margin-bottom: 15px;
+                font-size: 24px;
+                text-align: center;
+                color: #333;
+            }
+    
+            .wrapper .form{
+                margin-bottom: 15px;
+                background-color: #fff;
+                border: 1px solid #d8dee2;
+                border-radius: 5px;
+                padding: 20px;
+            }
+    
+            .wrapper .form .input_field{
+                margin-bottom: 15px;
+                position: relative;
+            }
+    
+            .wrapper .form .input_field label{
+                display: block;
+                font-weight: 600;
+                margin-bottom: 7px;
+                color: #24292e;
+            }
+    
+            .wrapper .form .input_field .input{
+                width: 100%;
+                background: #fff;
+                border: 1px solid #d1d5da;
+                box-shadow: inset 0 1px 2px rgba(27,31,35,.075);
+                border-radius: 3px;
+                color: #24292e;
+                font-size: 16px;
+                line-height: 20px;
+                min-height: 34px;
+                padding: 6px 8px;
+            }
+    
+            .wrapper .form .input_field a.forgot{
+                position: absolute;
+                top:  0;
+                right: 0;
+                font-size: 12px;
+                color: #0366d6;
+            }
+    
+            .wrapper .form .input_field .input:focus{
+                border-color: #2188ff;
+                box-shadow: inset 0 1px 2px rgba(27,31,35,.075),
+                0 0 0 2.5px rgba(3,102,214,.3);
+            }
+    
+            .wrapper .form .sign_btn{
+                margin-top: 20px;
+                background-color: #2188ff;
+                border: 1px solid rgba(27,31,35,.2);
+                width: 100%;
+                color: #fff;
+                font-weight: 600;
+                cursor: pointer;
+                padding: 6px 12px;
+                border-radius: 2px;
+            }
+    
+            .wrapper .form .sign_btn:hover{
+                background-color: #2188ff;
+            }
+    
+            .wrapper .create_act{
+                border: 1px solid #d8dee2;
+                border-radius: 5px;
+                padding: 15px 20px;
+                text-align: center;
+                margin-bottom: 40px;
+            }
+    
+            .wrapper .create_act a:hover{
+                text-decoration: underline;
+            }
+    
+            .wrapper .footer{
+                padding: 40px 0;
+                text-align: center;
+            }
+    
+            .wrapper .footer ul li{
+                display: inline-block;
+            }
+    
+            .wrapper .footer ul li a{
+                font-size: 12px;
+                margin-right: 15px;
+            }
+    
+            .wrapper .footer ul li a:hover,
+            .wrapper .footer ul li:last-child a:hover{
+                color: #0366d6;
+                text-decoration: underline;
+            }
+    
+            .wrapper .footer ul li:last-child a{
+                color: #586069;
+            }
+    
+            .articles a {
+                text-decoration: none !important;
+                display: block;
+                margin-bottom: 0;
+                color: #555
+            }
+    
+            .articles .badge {
+                font-size: 0.7em;
+                padding: 5px 10px;
+                line-height: 1;
+                margin-left: 10px
+            }
+    
+            .articles .item {
+                padding: 20px
+            }
+    
+            .articles .item:nth-of-type(even) {
+                background: #fafafa
+            }
+    
+            .articles .item .image {
+                min-width: 50px;
+                max-width: 50px;
+                height: 50px;
+                margin-right: 15px
+            }
+    
+            .articles .item img {
+                padding: 3px;
+                border: 1px solid #28a745
+            }
+    
+            .articles .item h3 {
+                color: #555;
+                font-weight: 400;
+                margin-bottom: 0
+            }
+    
+            .articles .item small {
+                color: #aaa;
+                font-size: 0.75em
+            }
+    
+            .card-close {
+                position: absolute;
+                top: 15px;
+                right: 15px
+            }
+    
+            .card-close .dropdown-toggle {
+                color: #999;
+                background: none;
+                border: none
+            }
+    
+            .card-close .dropdown-toggle:after {
+                display: none
+            }
+    
+            .card-close .dropdown-menu {
+                border: none;
+                min-width: auto;
+                font-size: 0.9em;
+                border-radius: 0;
+                -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1), -2px -2px 3px rgba(0, 0, 0, 0.1);
+                box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1), -2px -2px 3px rgba(0, 0, 0, 0.1)
+            }
+    
+            .card-close .dropdown-menu a {
+                color: #999 !important
+            }
+    
+            .card-close .dropdown-menu a:hover {
+                background: #796AEE;
+                color: #fff !important
+            }
+    
+            .card-close .dropdown-menu a i {
+                margin-right: 10px;
+                -webkit-transition: none;
+                transition: none
+            }
+    
+            #mySubmit
+            {
+                margin-left: 10em;
+            }
+    
+            /* ========== Media Specific (Responsive) ========== */
+    
+            @media screen and (max-width: 767px)
+            {
+                .sidenav
+                {
+                    height: auto;
+                    padding: 15px;
+                }
+                .row.content {height:auto;}
+            }
+        </style>
+    </head>  
+    <header><h1>Submit a Reimbursement Request</h1></header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav .nav-fill">
+            <li class="nav-item">
+              <a class="nav-link" href="reimbursementform.html">Reimbursement</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="profile.html">Profile</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+          </ul>
+        </div>
+      </nav>
+    </nav>
+    <body>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Submit a New Request
+		</button>
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Submit a New Request</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			  </div>
+			<div class="modal-body">
+                <form method = "post" action = "">
+                    <div class="form-group">
+                        <label> Employee ID: </label><br>
+                        <input type="text" name="reimbursement_employee_id" size=40 maxlength=150 required/>
+                        <label>Purpose for Reimbursement:</label><br>
+                        <input type="text" name="reimbursement_purpose" size=40 maxlength=150 required/>
+                        <label>Type of Reimbursement:</label><br>
+                        <select name = "reimbursement_type" id = "reimbursement_type" required>
+                            <option value = "travel">Travel purposes</option>
+                            <option value = "relocation">Relocation</option>
+                            <option value = "technology">Technology Purchase</option>
+                            <option value = "others">Other Purposes</option>
+                        </select>
+                        <label>Amount Needed:</label><br>
+                        <input type="text" name="reimbursement_amount" size=40 maxlength=150 required/>
+                        <label>Additional Comments</label><br>
+                        <input type="text" name="reimbursement_comments" size=40 maxlength=150 required/>
+                        <input type="submit" value="Submit" id = " "/>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>                        
+        <div class="tab">
+            <script src = "Scripts/reimbursement.js"></script>
+            <button class="tablinks" onclick="openReimbursements(event, 'Past Reimbursements')">Past Reimbursements</button>
+            <button class="tablinks" onclick="openReimbursements(event, 'Pending Reimbursements')">Pending Reimbursements</button>
+        </div> 
+                <div id="Past Reimbursements" class="tabcontent" onscroll = "showReimbursements()">
+                        <h3>Past Reimbursements</h3>
+                            <p>Past Approved/Denied Reimbursement Requests Are Shown Here:</p>
+                            <table id = "requestTable" >
+                                <thead>
+                                    <tr>
+                                        <th>Employee Name:</th>
+                                        <th>Purpose of Reimbursement: </th>
+                                        <th>Type: </th>    
+                                        <th>Amount: </th>
+                                        <th>Comments:</th>
+                                        <th>Status: </th>
+                                    </tr>
+                                </thead>
+                            </table>
+                       </div>            
+                        <div id="Pending Reimbursements" class="tabcontent" onscroll = "showReimbursements()">
+                            <h3>Pending Reimbursements</h3>
+                            <p> Reimbursement Requests That Are Yet to Be Approved/Denied Are Shown Here:</p>
+                        </div>     
+    </body>  
+</html>

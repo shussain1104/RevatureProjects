@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <meta charset = "utf-8">
+<head>
+<title>Reimbursements R Us - Edit Your Profile</title>
+<link rel="stylesheet" href = "Reimbursements.css">
+<meta name="viewport" content = "width = device-width, initial-scale=1.0">
+<!--[if 1t IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+  .navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+  }
+  
+  .row.content {height: auto}
+  
+  .sidenav {
+    padding-top: 20px;
+    background-color: #292b2f;
+    color: white;
+    height: 100%;
+  }
+  
+  footer {
+    background-color: #292b2f;
+    color: white;
+    padding: 15px;
+  }
+
+  @media screen and (max-width: 767px) {
+    .sidenav {
+      height: auto;
+      padding: 15px;
+    }
+    .row.content {height:auto;} 
+  }
+</style>
+</head>
+<body>
+    <center>
+
+        <h2>Edit Your Profile</h2>
+        <form action=" ">
+        <div class="form-group">
+              <label for="fname">First Name:</label>
+              <input type="text" class="form-control" id="firstname" name="firstname" style="width: 300px;">
+            
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name:</label>
+              <input type="text" class="form-control" id="lastname" name="lastname" style="width: 300px;">
+            </div>
+            <div class="form-group">
+              <label for="description">Description:</label>
+              <textarea class="form-control" rows="5" id="description" name="text" style="width: 300px;"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="ppicture">Profile Picture:</label>
+              <input type="file" class="form-control-file border" id="ppicture" name="file">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        </center>
+</body>
+</html>
